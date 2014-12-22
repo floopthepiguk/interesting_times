@@ -23,8 +23,13 @@ module.exports = (grunt) ->
       options:
         banner: "/*! <%= pkg.name %> <%= grunt.template.today(\"yyyy-mm-dd\") %> */\n"
       build:
-        src: ['app/lib/bower_components.js','app/lib/application.js']
+        src:  'app/lib/application.js'
         dest: 'app/lib/application.min.js'
+      bower:
+        src:  'app/lib/bower_components.js'
+        dest: 'app/lib/bower_components.min.js'
+        
+
 
     watch:
       sass:
@@ -32,7 +37,7 @@ module.exports = (grunt) ->
         tasks: ['sass']
       coffee:
         files: ['app/*.coffee','app/**/*.coffee']
-        tasks: ['coffee','uglify']
+        tasks: ['coffee','uglify:build']
   
 
   # Load the plugins
