@@ -6,17 +6,15 @@ body {
 }
 .container {
 	width: 90%;
-  height:600px;
-	max-width: 1200px;
+  height:500px;
+	max-width: 1000px;
 	margin: 0 auto;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+  margin-top: 100px;
 }
 .time {
 	font-weight: 200;
 	letter-spacing: .1em;
-	font-size: 160px;
+	font-size: 140px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -44,6 +42,7 @@ h2 {
 }
 
 footer {
+  opacity: .4;
   img {
     width: 200px;
   }
