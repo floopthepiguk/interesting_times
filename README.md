@@ -1,1 +1,1 @@
-Algebraic
+Prime-number clock concept

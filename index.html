@@ -9,16 +9,17 @@
         <script type= "text/javascript" src="app/lib/bower_components.min.js"></script>
         <script type= "text/javascript" src="app/lib/application.min.js"></script>
         <link rel="stylesheet" href="/css/lib/application.css" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
-      <div ng-controller="PrimetimeController">
-        <p>
+      <div ng-controller="PrimetimeController" class="container">
+        <p class="time">
           {{time}}
         </p>
 
         <div ng-show="is_prime(integer)">
-          <h2>Prime!!</h2>
+          <h2 class="primetime">Prime</h2>
         </div>
 
         <div ng-show="!is_prime(integer)">
@@ -31,6 +32,12 @@
         </div>
 
       </div>
+
+
+      <footer>
+      <img src="/app/img/floop-the-pig.svg" alt = "Floop the pig" /> 
+      <p><strong>Primetime</strong> - Design, Concept and <a href = "https://github.com/floopthepiguk/primetime">Code</a> by <a href = "http://floopthepig.uk">Floop the Pig</a></p>
+      </footer>
 
     </body>
 </html>
