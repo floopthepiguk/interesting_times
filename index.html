@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en" ng-app="primetime">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +8,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type= "text/javascript" src="app/lib/bower_components.min.js"></script>
         <script type= "text/javascript" src="app/lib/application.min.js"></script>
-        <link rel="stylesheet" src="/css/lib/application.css" />
+        <link rel="stylesheet" href="/css/lib/application.css" />
     </head>
     <body>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+      <div ng-controller="PrimetimeController">
+        <p>
+          {{time}}
+        </p>
+
+        <div ng-show="is_prime(integer)">
+          <h2>Prime!!</h2>
+        </div>
+
+        <div ng-show="!is_prime(integer)">
+          <h2>Factors</h2>
+          <ul class = "primes">
+            <li ng-repeat="factor in factors(integer)">
+              <span>{{ factor}}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
 
     </body>
 </html>

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACE,UAAG,CACD,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,GAAG",
+"sources": ["../src/application.scss"],
 "names": [],
 "file": "application.css"
 }
