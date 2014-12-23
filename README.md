@@ -1,1 +1,1 @@
-Prime-number clock concept
+Prime-number clock concept by Floop the Pig.
