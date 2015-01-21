@@ -11,17 +11,9 @@
         return d.toTimeString().substring(0, 5);
       };
       update_fact = function(num) {
-        var type, _i, _len, _ref;
-        _ref = ["year", "trivia", "math"];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          type = _ref[_i];
-          $.get("http://numbersapi.com/" + num + "/" + type + "?json", function(data) {
-            if (data.found) {
-              $scope.fact = data.text;
-            }
-          });
-        }
-        return "...";
+        return $.get("http://numbersapi.com/" + num + "/year?json", function(data) {
+          return $scope.fact = data.text;
+        });
       };
       promise = void 0;
       (function() {
@@ -43,7 +35,8 @@
       $scope.time = date_to_time(new Date);
       $scope.seconds = (new Date).getSeconds();
       $scope.integer = date_to_time(new Date).replace(/:/g, "");
-      return $scope.fact = update_fact($scope.integer);
+      $scope.fact = "...";
+      return update_fact($scope.integer);
     }
   ]);
 

@@ -5,13 +5,8 @@
       return d.toTimeString().substring(0,5)
 
     update_fact = (num) ->
-      for type in ["year","trivia","math"]
-        $.get "http://numbersapi.com/#{num}/#{type}?json", (data) ->
-          if data.found
-            $scope.fact = data.text
-            return
-      return "..."
-
+      $.get "http://numbersapi.com/#{num}/year?json", (data) ->
+        $scope.fact = data.text
 
     promise   = undefined
     #The loop
@@ -36,5 +31,6 @@
     $scope.time     = date_to_time(new Date)
     $scope.seconds  = (new Date).getSeconds()
     $scope.integer  = date_to_time(new Date).replace(/:/g,"")
-    $scope.fact     = update_fact($scope.integer)
+    $scope.fact     = "..."
+    update_fact($scope.integer)
 ]
