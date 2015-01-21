@@ -2,8 +2,15 @@
   "$scope", "$interval"
   ($scope, $interval) ->
     date_to_time = (d) ->
-      return d.toTimeString().substring(0,8)
+      return d.toTimeString().substring(0,5)
 
+    update_fact = (num) ->
+      for type in ["year","trivia","math"]
+        $.get "http://numbersapi.com/#{num}/#{type}?json", (data) ->
+          if data.found
+            $scope.fact = data.text
+            return
+      return "..."
 
 
     promise   = undefined
@@ -12,7 +19,9 @@
       animPromise = $interval(->
         current_date    = new Date
         $scope.time     = date_to_time current_date
+        $scope.seconds  = current_date.getSeconds()
         $scope.integer  = $scope.time.replace(/:/g,"")
+        update_fact($scope.integer) if $scope.seconds == 0
       , 1000))()
 
     
@@ -25,17 +34,7 @@
     # Properties
     #
     $scope.time     = date_to_time(new Date)
+    $scope.seconds  = (new Date).getSeconds()
     $scope.integer  = date_to_time(new Date).replace(/:/g,"")
-
-    $scope.factors = (num) ->
-      factors = []
-      i = 1
-      for i in [2..Math.sqrt(num)] by 1
-        quotient = num / i
-        factors.push i  if quotient is Math.floor(quotient)
-      factors
-  
-    $scope.is_prime = (num) ->
-      return numbers.prime.simple(num)
-
+    $scope.fact     = update_fact($scope.integer)
 ]

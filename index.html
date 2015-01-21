@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Prime time</title>
-        <meta name="description" content="Prime number clock">
+        <title>Interesting Times (watch and learn)</title>
+        <meta name="description" content="By-the-minute factoids about the current time.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type= "text/javascript" src="app/lib/bower_components.min.js"></script>
         <script type= "text/javascript" src="app/lib/application.min.js"></script>
         <link rel="stylesheet" href="/css/lib/application.css" />
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Nixie+One|Libre+Baskerville:700' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
@@ -17,26 +17,16 @@
         <p class="time">
           {{time}}
         </p>
-
-        <div ng-show="is_prime(integer)">
-          <h2 class="primetime">Prime</h2>
-        </div>
-
-        <div ng-show="!is_prime(integer)">
-          <h2>Factors</h2>
-          <ul class = "primes">
-            <li ng-repeat="factor in factors(integer)">
-              <span>{{ factor}}</span>
-            </li>
-          </ul>
-        </div>
-
+        <p class= "fact">
+          {{fact}}
+        </p>
       </div>
 
 
       <footer>
       <img src="/app/img/floop-the-pig.svg" alt = "Floop the pig" /> 
-      <p><strong>Primetime</strong> - Design, Concept and <a href = "https://github.com/floopthepiguk/primetime">Code</a> by <a href = "http://floopthepig.uk">Floop the Pig</a></p>
+      <p><strong>Interesting Times (watch and learn)</strong> - Design, Concept and <a href = "https://github.com/floopthepiguk/interesting_times">Code</a> by <a href = "http://floopthepig.uk">Floop the Pig</a></p>
+      <p>Facts courtesy of the amazing <a href = "http://numbersapi.com">Numbers API</a>.</p>
       </footer>
 
     </body>
