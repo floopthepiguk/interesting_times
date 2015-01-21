@@ -1,4 +1,4 @@
-@app.controller "PrimetimeController", [
+@app.controller "InterestingtimeController", [
   "$scope", "$interval"
   ($scope, $interval) ->
     date_to_time = (d) ->

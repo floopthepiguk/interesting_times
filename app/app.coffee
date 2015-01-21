@@ -1,1 +1,1 @@
-@app = angular.module "primetime", []
+@app = angular.module "interestingtimes", []

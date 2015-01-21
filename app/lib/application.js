@@ -1,10 +1,10 @@
 (function() {
-  this.app = angular.module("primetime", []);
+  this.app = angular.module("interestingtimes", []);
 
 }).call(this);
 
 (function() {
-  this.app.controller("PrimetimeController", [
+  this.app.controller("InterestingtimeController", [
     "$scope", "$interval", function($scope, $interval) {
       var date_to_time, promise;
       date_to_time = function(d) {
