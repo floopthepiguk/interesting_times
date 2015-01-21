@@ -11,7 +11,7 @@
         return d.toTimeString().substring(0, 5);
       };
       update_fact = function(num) {
-        return $.get("http://numbersapi.com/" + num + "/math", function(data) {
+        return $.get("http://numbersapi.com/" + num + "/trivia", function(data) {
           return $scope.fact = data;
         });
       };

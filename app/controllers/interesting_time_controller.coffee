@@ -5,7 +5,7 @@
       return d.toTimeString().substring(0,5)
 
     update_fact = (num) ->
-      $.get "http://numbersapi.com/#{num}/math", (data) ->
+      $.get "http://numbersapi.com/#{num}/trivia", (data) ->
         $scope.fact = data
 
     promise   = undefined
