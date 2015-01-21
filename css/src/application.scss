@@ -1,8 +1,9 @@
 html {
 	background-color: #333;
 	color: #fff;
-	background: #3a433d url(/app/img/it-bg.jpg) center bottom no-repeat;
-	background-cover: cover;
+	background-image: url(/app/img/it-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 	height: 100%;
 	width: 100%;
 
@@ -11,7 +12,9 @@ html {
 .container {
 	max-width: 960px;
 	margin: 0 auto 48px auto;
-
+	padding: 0 12px; 
+	height: 100%;
+	width: 100%;
 }
 .time {
   font-family: "Nixie One", "Helvetica", "Arial", sans-serif;
@@ -35,7 +38,7 @@ footer {
   opacity: .4;
   overflow: hidden;
   img {
-    width: 100px;
+    width: 10%;
     display: inline-block;
     float: left;
   }
@@ -44,9 +47,33 @@ footer {
     
   }
   p {
-  	width: 800px;
+  	width: 90%;
   	float: left;
   	margin-bottom: 0;
   }
 }
 
+@media screen and (max-width: 762px)  {
+	.time {
+		font-size: 130px;
+		line-height: 130px;
+	}
+	.fact {
+		font-size: 30px;
+  		line-height: 48px;
+	}
+}
+
+@media screen and (max-width: 480px)  {
+	.time {
+		font-size: 100px;
+		line-height: 100px;
+	}
+	.fact {
+		font-size: 26px;
+  		line-height: 42px;
+	}
+	.footer {
+		margin-top: 200px;
+	}
+}
