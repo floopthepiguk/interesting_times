@@ -5,7 +5,12 @@
       return d.toTimeString().substring(0,5)
 
     update_fact = (num) ->
-      $.get "http://numbersapi.com/#{num}/trivia", (data) ->
+      if num < 2000
+        type = "year"
+      else
+        type = "math"
+
+      $.get "http://numbersapi.com/#{num}/#{type}", (data) ->
         $scope.fact = data
 
     promise   = undefined

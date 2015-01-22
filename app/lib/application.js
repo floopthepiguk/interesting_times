@@ -11,7 +11,13 @@
         return d.toTimeString().substring(0, 5);
       };
       update_fact = function(num) {
-        return $.get("http://numbersapi.com/" + num + "/trivia", function(data) {
+        var type;
+        if (num < 2000) {
+          type = "year";
+        } else {
+          type = "math";
+        }
+        return $.get("http://numbersapi.com/" + num + "/" + type, function(data) {
           return $scope.fact = data;
         });
       };
